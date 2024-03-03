@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+BookHive Categories
+{% endblock %}
+
+{% block main_block %}
+<main>
+    <h2 id="categoryTitle">Categories</h2>
+    <section id="categoryBooks" class="wishlist">
+        <!-- The category books will be inserted here -->
+    </section>
+</main>
+{% endblock %}
+
+{% block additional_scripts %}
+<script src="{{ url_for('static', filename='JavaScript/Categories.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/Books.js') }}"></script>
+{% endblock %}

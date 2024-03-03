@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Base Page{% endblock %}</title>
+    {% include 'styles.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/HomePage.css') }}">-->
+</head>
+<body>
+    {% include 'header.html' %}
+
+    {% block main_block %}
+    <!-- Main content unique to each page will go here -->
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+<!--    <script src="{{ url_for('static', filename='JavaScript/HomePage.js') }}"></script>-->
+<!--    <script src="{{ url_for('static', filename='JavaScript/Books.js') }}"></script>-->
+<!--    <script src="{{ url_for('static', filename='JavaScript/UserProfile.js') }}"></script>-->
+</body>
+</html>

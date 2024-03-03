@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block main_block %}
+<div class="headline-container">
+    <h1 class="headline">Discover A World Of Books To Swap</h1>
+</div>
+
+<div class="search-container">
+    <input type="text" id="search-box" placeholder="Search for books...">
+    <button type="submit" id="search-button">Search</button>
+    <div id="search-suggestions" class="search-suggestions"></div>
+</div>
+
+<div class="category-grid">
+    <a href="{{ url_for('Categories.category', category_name='Mystery') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/MysteryCategory.jpg') }}')">Mystery</a>
+    <a href="{{ url_for('Categories.category', category_name='Fantasy') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/FantasyCategory.jpg') }}')">Fantasy</a>
+    <a href="{{ url_for('Categories.category', category_name='Biography') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/BiographyCategory.jpg') }}')">Biography</a>
+    <a href="{{ url_for('Categories.category', category_name='Horror') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/HorrorCategory.jpg') }}')">Horror</a>
+    <a href="{{ url_for('Categories.category', category_name='Romance') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/RomanceCategory.jpeg') }}')">Romance</a>
+    <a href="{{ url_for('Categories.category', category_name='Comedy') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/ComedyCategory.jpg') }}')">Comedy</a>
+    <a href="{{ url_for('Categories.category', category_name='Adventure') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/AdventureCategory.jpg') }}')">Adventure</a>
+    <a href="{{ url_for('Categories.category', category_name='Science Fiction') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/ScienceFictionCategory.jpg') }}')">Science Fiction</a>
+    <a href="{{ url_for('Categories.category', category_name='History') }}" class="category-item" style="background-image:url('{{ url_for('static', filename='pictures/HistoryCategory.png') }}')">History</a>
+</div>
+
+{% endblock %}
+
+{% block additional_scripts %}
+<script src="{{ url_for('static', filename='JavaScript/HomePage.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/Books.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/UserProfile.js') }}"></script>
+{% endblock %}
