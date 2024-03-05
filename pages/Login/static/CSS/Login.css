@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body, input, button, a {
+    font-family: 'Lexend', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the .left-side and .right-side vertically */
+    margin: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.left-side {
+    flex: 1;
+    background-image: url('../pictures/BooksLogin.png');
+    background-size: cover;
+    background-position: center;
+    min-width: 50%;
+    display: none; /* Hide the text on the left-side */
+}
+
+.right-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the form and text inside .right-side */
+    max-width: 50%;
+}
+
+.right-side h1 {
+    font-size: calc(2rem + 1vw);
+    font-weight: bold;
+    color: #000000; /* Changed to grey as per your requirement */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.right-side h2.subheader {
+    text-align: center;
+    font-size: calc(0.8rem + 0.5vw);
+    color: #888; /* Changed to grey as per your requirement */
+    font-weight: normal; /* Make it normal weight, not bold */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form items horizontally */
+    width: 100%;
+}
+
+form label {
+    margin-top: 25px;
+    text-align: center; /* Center the label text */
+}
+
+form input, form button {
+    padding: 10px;
+    margin-top: 5px;
+    max-width: 300px; /* Adjust input width */
+    width: 100%; /* Full width on small screens, overridden by max-width */
+}
+
+#forgotPassword {
+    color: #888; /* Changed to grey as per your requirement */
+    text-align: center;
+    display: block; /* Take a whole line */
+    margin-top: 10px;
+}
+
+button.loginButton {
+    background-color: #76491b;
+    color: #fff;
+    padding: 15px;
+    font-size: calc(0.8rem + 0.5vw);
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup p {
+    color: #555;
+}
+
+.signup a.signup-link {
+    font-weight: bold; /* Make 'Sign Up' bold */
+    color: #000; /* Ensure the color is black */
+    cursor: pointer;
+}
+
+/* Ensure responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .right-side {
+        max-width: 100%;
+    }
+
+    form input, form button {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}

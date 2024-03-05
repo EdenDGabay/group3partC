@@ -14,7 +14,7 @@ app.register_blueprint(Categories, url_prefix='/categories')
 
 @app.route('/')
 def home():
-    # Redirect to the homepage Blueprint
+    # Redirect to the homepage Blueprints
     return redirect('/homepage')
 
 if __name__ == '__main__':

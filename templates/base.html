@@ -6,7 +6,10 @@
     <title>{% block title %}Base Page{% endblock %}</title>
     {% include 'styles.html' %}
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
-<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/HomePage.css') }}">-->
+
+    {% block additional_styles %}
+    <!-- Page-specific styles will be added by child templates -->
+    {% endblock %}
 </head>
 <body>
     {% include 'header.html' %}
@@ -17,8 +20,8 @@
 
     {% include 'footer.html' %}
 
-<!--    <script src="{{ url_for('static', filename='JavaScript/HomePage.js') }}"></script>-->
-<!--    <script src="{{ url_for('static', filename='JavaScript/Books.js') }}"></script>-->
-<!--    <script src="{{ url_for('static', filename='JavaScript/UserProfile.js') }}"></script>-->
+    {% block additional_scripts %}
+    <!-- Page-specific scripts will be added by child templates -->
+    {% endblock %}
 </body>
 </html>
