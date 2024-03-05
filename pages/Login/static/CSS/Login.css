@@ -29,7 +29,7 @@ body, input, button, a {
     background-size: cover;
     background-position: center;
     min-width: 50%;
-    display: none; /* Hide the text on the left-side */
+    display: none; /* Hidee the text on the left-side */
 }
 
 .right-side {
