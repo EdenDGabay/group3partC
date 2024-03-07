@@ -5,6 +5,7 @@ from pages.SignUp.SignUp import SignUp
 from pages.Categories.Categories import Categories
 
 app = Flask(__name__)
+app.config.from_pyfile('settings.py')
 
 # Register Blueprints
 app.register_blueprint(HomePage)

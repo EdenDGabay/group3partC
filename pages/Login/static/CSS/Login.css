@@ -25,7 +25,7 @@ body, input, button, a {
 
 .left-side {
     flex: 1;
-    background-image: url('../pictures/BooksLogin.png');
+    background-image: url('../../../../static/img/BooksLogin.png');
     background-size: cover;
     background-position: center;
     min-width: 50%;

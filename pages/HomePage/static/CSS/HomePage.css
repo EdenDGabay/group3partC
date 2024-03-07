@@ -133,7 +133,11 @@ header h1 {
     background-position: center;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px  1px 0 #000,
+        1px  1px 0 #000;
 }
 
 .category-item:hover {
@@ -142,37 +146,37 @@ header h1 {
 }
 
 #mystery {
-    background-image: url('pages/HomePage/static/pictures/MysteryCategory.jpg');
+    background-image: url('../../../../static/img/AdventureCategory.jpg');
 }
 
 #fantasy {
-    background-image: url('pages/HomePage/static/pictures/FantasyCategory.jpg');
+    background-image: url('../../../../static/img/FantasyCategory.jpg');
 }
 
 #biography {
-    background-image: url('pages/HomePage/static/pictures/BiographyCategory.jpg');
+    background-image: url('../../../../static/img/BiographyCategory.jpg');
 }
 
 #horror {
-    background-image: url('pages/HomePage/static/pictures/HorrorCategory.jpg');
+    background-image: url('../../../../static/img/HorrorCategory.jpg');
 }
 
 #romance {
-    background-image: url('pages/HomePage/static/pictures/RomanceCaregory.jpeg');
+    background-image: url('../../../../static/img/RomanceCaregory.jpeg');
 }
 
 #comedy {
-    background-image: url('pages/HomePage/static/pictures/ComedyCategory.jpg');
+    background-image: url('../../../../static/img/ComedyCategory.jpg');
 }
 
 #adventure {
-    background-image: url('pages/HomePage/static/pictures/AdventureCategory.jpg');
+    background-image: url('../../../../static/img/AdventureCategory.jpg');
 }
 
 #scienceFiction {
-    background-image: url('pages/HomePage/static/pictures/ScienceFictionCategory.jpg');
+    background-image: url('../../../../static/img/ScienceFictionCategory.jpg');
 }
 
 #history {
-    background-image: url('pages/HomePage/static/pictures/HistoryCategory.png');
+    background-image: url('../../../../static/img/HistoryCategory.png');
 }
