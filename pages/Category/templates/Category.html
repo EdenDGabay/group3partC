@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+BookHive Categories
+{% endblock %}
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('Category.static', filename='CSS/Category.css') }}">
+{% endblock %}
+{% block main_block %}
+<main>
+    <h2 id="categoryTitle">{{category_name}}</h2>
+    <div class="msg_container">
+        {%if msg != ""%}
+        <p class="message">{{msg}}</p>
+        {%endif%}
+    </div>
+    <section id="categoryBooks" class="wishlist">
+        {% for book in books %}
+        <div class="book">
+            <img src="{{book.imageSrc}}" alt="{{book.title}} cover image" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">{{book.title}}</h3>
+                <p class="book-author">{{book.author}}</p>
+                <p class="book-details">{{book.details}}</p>
+            </div>
+            {% if session['username'] is defined %}
+            <a class="details-button" href="{{url_for('EditBook.EditBook_get', book_id=book._id)}}"
+                style="display: block; margin-top: 10px; text-decoration: none; background-color: rgb(168, 122, 76); color: white; padding: 10px 15px; border-radius: 5px;">Edit
+                Book</a>
+            <a class="details-button" href="{{url_for('RemoveBook.remove_book', book_id=book._id)}}"
+                style="display: block; margin-top: 10px; text-decoration: none; background-color: red; color: white; padding: 10px 15px; border-radius: 5px;">Remove
+                Book</a>
+            {% endif %}
+        </div>
+
+        {%endfor%}
+
+    </section>
+</main>
+{% endblock %}
+
+{% block additional_scripts %}
+<script src="{{ url_for('static', filename='JavaScript/Categories.js') }}"></script>
+<script src="{{ url_for('static', filename='JavaScript/Books.js') }}"></script>
+{% endblock %}

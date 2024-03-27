@@ -2,9 +2,17 @@
     <h1>BookHive</h1>
     <nav>
         <ul>
-            <li><a href="HomePage.html">Home</a></li>
-            <li><a href="UserProfile.html">Profile</a></li>
-            <li><a href="Chats.html">Chats</a></li>
+            <li><a href="/">Home</a></li>
+            {% if session["username"] is defined %}
+            
+            <li><a href="/edit_book">Add New Book</a></li>
+            <li><a href="/logout">Log Out</a></li>
+                Hello {{session["username"]}}!
+            {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+            {% endif %}
+
         </ul>
     </nav>
 </header>

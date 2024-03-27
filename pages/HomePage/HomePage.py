@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, url_for
 
+from utilities.db.mongo_util import mongo_db_instance
+
 HomePage = Blueprint('HomePage',
                      __name__,
                      static_folder='static',
@@ -14,13 +16,11 @@ books_by_category = {
 @HomePage.route('/')
 def index():
     # The index function will render the homepage template
-    return render_template('HomePage.html')
+    db = mongo_db_instance()
+    categories = db['Categories']
+    categories = categories.find()
+    return render_template('HomePage.html', categories=categories)
 
-@HomePage.route('/categories/<category>')
-def categories(category):
-    # This function will simulate fetching data from a database
-    books = books_by_category.get(category, [])
-    return render_template('Categories.html', category=category, books=books)
 
 # You can add more routes for other functionalities here...
 

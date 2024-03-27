@@ -1,0 +1,4 @@
+flask
+certifi
+pymongo 
+dnspython 

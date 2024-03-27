@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{%if book is defined%}Edit Book{%else%} Add Book {%endif%}
+{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('EditBook.static', filename='CSS/EditBook.css') }}">
+{% endblock %}
+
+{% block main_block %}
+<div class="container">
+    <h2>{%if book is defined%}Edit Book{%else%} Add Book {%endif%}</h2>
+    <form id="EditBookForm" method="post">
+        {% if error_message is defined%}
+            <p class="error-message">{{error_message}}</p>
+        {% endif %}
+
+        {% if success_message is defined%}
+            <p class="error-message">{{success_message}}</p>
+        {% endif %}
+        <label for="BookName">Book Title:</label>
+        <input type="text" id="BookName" name="title" required {%if book is defined%} value="{{book.title}}" {%endif%}></input>
+
+        <label for="BookAuthor">Book Author:</label>
+        <input type="text" id="BookAuthor" name="author" required{%if book is defined%} value="{{book.author}}" {%endif%}></input>
+
+        <label for="BookImage">Book Image:</label>
+        <input type="text" id="BookImage" name="imageSrc" required {%if book is defined%} value="{{book.imageSrc}}" {%endif%}></input>
+        <label for="BookDetails">Book Details:</label>
+        <textarea id="BookDetails" name="details" required>{%if book is defined%}{{book.details}}{%endif%}</textarea>
+
+        <select name="category" required  {%if book is defined%} value="{{book.category}}"  {%endif%}>
+            <option value="">--Please choose a category--</option>
+            {% for category in categories %}
+                <option value="{{category.name}}" {%if book is defined and book.category ==category.name %} selected {%endif%}>{{category.name}}</option>
+            {% endfor %}
+          </select>
+          
+        <button type="submit">{%if book is defined%}Update book {%else%} Add Book{%endif%}</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block additional_scripts %}
+<script src="{{ url_for('static', filename='JavaScript/EditBook.js') }}"></script>
+{% endblock %}

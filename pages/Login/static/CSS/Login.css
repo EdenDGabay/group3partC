@@ -5,27 +5,47 @@
     font-family: 'Lexend', sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
 
-body, input, button, a {
+body,
+input,
+button,
+a {
     font-family: 'Lexend', sans-serif;
 }
+
+.msg_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Center the .left-side and .right-side vertically */
+    align-items: center;
+    /* Center the .left-side and .right-side vertically */
     margin: auto;
     max-width: 1200px;
     width: 100%;
+    box-shadow: none;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
 }
 
 .left-side {
+    height: 500px;
     flex: 1;
-    background-image: url('../../../../static/img/BooksLogin.png');
+    background-image: url('../../../static/img/BooksLogin.png');
     background-size: cover;
     background-position: center;
     min-width: 50%;
@@ -37,14 +57,16 @@ body, input, button, a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center the form and text inside .right-side */
+    align-items: center;
+    /* Center the form and text inside .right-side */
     max-width: 50%;
 }
 
 .right-side h1 {
     font-size: calc(2rem + 1vw);
     font-weight: bold;
-    color: #000000; /* Changed to grey as per your requirement */
+    color: #000000;
+    /* Changed to grey as per your requirement */
     text-align: center;
     margin-bottom: 5px;
 }
@@ -52,34 +74,43 @@ body, input, button, a {
 .right-side h2.subheader {
     text-align: center;
     font-size: calc(0.8rem + 0.5vw);
-    color: #888; /* Changed to grey as per your requirement */
-    font-weight: normal; /* Make it normal weight, not bold */
+    color: #888;
+    /* Changed to grey as per your requirement */
+    font-weight: normal;
+    /* Make it normal weight, not bold */
     margin-bottom: 20px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center form items horizontally */
+    align-items: center;
+    /* Center form items horizontally */
     width: 100%;
 }
 
 form label {
     margin-top: 25px;
-    text-align: center; /* Center the label text */
+    text-align: center;
+    /* Center the label text */
 }
 
-form input, form button {
+form input,
+form button {
     padding: 10px;
     margin-top: 5px;
-    max-width: 300px; /* Adjust input width */
-    width: 100%; /* Full width on small screens, overridden by max-width */
+    max-width: 300px;
+    /* Adjust input width */
+    width: 100%;
+    /* Full width on small screens, overridden by max-width */
 }
 
 #forgotPassword {
-    color: #888; /* Changed to grey as per your requirement */
+    color: #888;
+    /* Changed to grey as per your requirement */
     text-align: center;
-    display: block; /* Take a whole line */
+    display: block;
+    /* Take a whole line */
     margin-top: 10px;
 }
 
@@ -104,8 +135,10 @@ button.loginButton {
 }
 
 .signup a.signup-link {
-    font-weight: bold; /* Make 'Sign Up' bold */
-    color: #000; /* Ensure the color is black */
+    font-weight: bold;
+    /* Make 'Sign Up' bold */
+    color: #000;
+    /* Ensure the color is black */
     cursor: pointer;
 }
 
@@ -115,16 +148,20 @@ button.loginButton {
         flex-direction: column-reverse;
     }
 
-    .left-side, .right-side {
+    .left-side,
+    .right-side {
         width: 100%;
         min-width: 100%;
+
     }
 
     .right-side {
         max-width: 100%;
     }
 
-    form input, form button {
-        width: 90%; /* Adjust width for smaller screens */
+    form input,
+    form button {
+        width: 90%;
+        /* Adjust width for smaller screens */
     }
 }

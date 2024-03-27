@@ -1,0 +1,110 @@
+.wishlist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.msg_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 60px;
+    margin: 20px 0;
+    color: #000000;
+    background-color: #e7c0aa;
+}
+
+.details-button {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: rgb(168, 122, 76);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.book-cover {
+    width: 65%;
+    height: auto;
+}
+
+.book-info {
+    padding: 10px;
+}
+
+.book-title {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.book-author {
+    font-size: 20px;
+    color: #693b22;
+}
+
+
+@media (max-width: 1024px) {
+    .wishlist {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main h2 {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .wishlist {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book-title {
+        font-size: min(max(18px, 4vw), 22px);
+    }
+
+    .book-author {
+        font-size: min(max(16px, 3.5vw), 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist {
+        grid-template-columns: 1fr;
+    }
+
+    header,
+    nav ul li a,
+    .book-title,
+    .book-author {
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}

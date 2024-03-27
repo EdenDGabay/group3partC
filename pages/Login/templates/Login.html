@@ -9,8 +9,15 @@ Login Page
 {% endblock %}
 
 {% block main_block %}
+<div class="msg_container">
+{%if msg != ""%}
+<p class="message">{{msg}}</p>
+{%endif%}
+</div>
+
 <div class="container">
-    <div class="left-side" style="background-image: url('static/img/BooksLogin.png');">
+    <div class="left-side">
+        <p></p>
     </div>
 
 
@@ -18,12 +25,14 @@ Login Page
         <h1>Welcome Back!</h1>
         <h2 class="subheader">Sign in to access your account</h2>
 
-        <form id="loginForm">
+        <form id="loginForm" method="post">
+            {% if error_message is defined %}
+            <p class="error-message">{{error_message}}</p>
+            {% endif %}
             <label for="email">Email address:</label>
             <input type="email" id="email" name="email" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <a href="#" id="forgotPassword">Forgot Password?</a>
 
             <button class="loginButton" type="submit">Log in</button>
         </form>

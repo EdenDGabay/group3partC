@@ -15,22 +15,19 @@ Home Page
 </div>
 
 <div class="search-container">
-    <input type="text" id="search-box" placeholder="Search for books...">
-    <button type="submit" id="search-button">Search</button>
+    <form action="/search" method="get">
+        <input type="text" name="search_term" id="search-box" placeholder="Search for books...">
+        <button type="submit" id="search-button">Search</button>
+    </form>
     <div id="search-suggestions" class="search-suggestions"></div>
 </div>
 
 
 <div class="category-grid">
-        <a href="Categories.html?category=Mystery" class="category-item" style="background-image:url('../../../static/img/MysteryCategory.jpg')">Mystery</a>
-        <a href="Categories.html?category=Fantasy" class="category-item" style="background-image:url('../../../static/img/FantasyCategory.jpg')">Fantasy</a>
-        <a href="Categories.html?category=Biography" class="category-item" style="background-image:url('../../../static/img/BiographyCategory.jpg')">Biography</a>
-        <a href="Categories.html?category=Horror" class="category-item" style="background-image:url('../../../static/img/HorrorCategory.jpg')">Horror</a>
-        <a href="Categories.html?category=Romance" class="category-item" style="background-image:url('../../../static/img/RomanceCaregory.jpeg')">Romance</a>
-        <a href="Categories.html?category=Comedy" class="category-item" style="background-image:url('../../../static/img/ComedyCategory.jpg')">Comedy</a>
-        <a href="Categories.html?category=Adventure" class="category-item" style="background-image:url('../../../static/img/AdventureCategory.jpg')">Adventure</a>
-        <a href="Categories.html?category=Science%20Fiction" class="category-item" style="background-image:url('../../../static/img/ScienceFictionCategory.jpg')">Science Fiction</a>
-        <a href="Categories.html?category=History" class="category-item" style="background-image:url('../../../static/img/HistoryCategory.png')">History</a>
+    {% for category in categories %}
+    <a href="/category/{{category.name}}" class="category-item"
+        style="background-image:url('../../../static/img/{{category.image}}')">{{category.name}}</a>
+    {% endfor %}
 </div>
 
 {% endblock %}
