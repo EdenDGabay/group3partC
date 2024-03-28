@@ -15,7 +15,7 @@ def search():
     # Placeholder for category-specific data
     db = mongo_db_instance()
     books = db['Books']
-    books = books.find({'$or': [{'title': {'$regex': search_term, '$options': 'i'}}, {'details': {'$regex': search_term, '$options': 'i'}}]})
+    books = books.find({'title': {'$regex': search_term, '$options': 'i'}})
     books = [book for book in books]
     if len(books)==0:
         return render_template('Search.html', search_term=search_term, error_message="No books found")

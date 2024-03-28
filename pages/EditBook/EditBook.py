@@ -37,6 +37,13 @@ def EditBook_get(book_id):
 def AddBook_Post():
     if session.get('username'):
         db = mongo_db_instance()
+        book = {
+                    'title': request.form.get('title'),
+                    'author': request.form.get('author'),
+                    'category': request.form.get('category'),
+                    'details': request.form.get('details'),
+                    'imageSrc': request.form.get('imageSrc')
+                    }
         books_collection = db['Books']
         categories_collection = db['Categories']
         categories = categories_collection.find()
@@ -47,13 +54,7 @@ def AddBook_Post():
                 imageSrc = request.form['imageSrc']
                 if imageSrc.startswith('http://') or imageSrc.startswith('https://'):
                     # Fields are valid, continue with adding the book
-                    book = {
-                        'title': request.form['title'],
-                        'author': request.form['author'],
-                        'category': category,
-                        'details': request.form['details'],
-                        'imageSrc': imageSrc
-                    }
+                    
                     books_collection.insert_one(book)
                     return redirect(url_for('Category.category', category_name=category, msg = "Book added successfully!"))
                 else:
