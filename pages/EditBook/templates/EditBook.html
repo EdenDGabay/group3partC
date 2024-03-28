@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-{%if book is defined%}Edit Book{%else%} Add Book {%endif%}
+{%if is_edit is defined%}Edit Book{%else%} Add Book {%endif%}
 {% endblock %}
 
 {% block additional_styles %}
@@ -10,7 +10,7 @@
 
 {% block main_block %}
 <div class="container">
-    <h2>{%if book is defined%}Edit Book{%else%} Add Book {%endif%}</h2>
+    <h2>{%if is_edit is defined%}Edit Book{%else%} Add Book {%endif%}</h2>
     <form id="EditBookForm" method="post">
         {% if error_message is defined%}
             <p class="error-message">{{error_message}}</p>
@@ -37,11 +37,10 @@
             {% endfor %}
           </select>
           
-        <button type="submit">{%if book is defined%}Update book {%else%} Add Book{%endif%}</button>
+        <button type="submit">{%if is_edit is defined%}Update book {%else%} Add Book{%endif%}</button>
     </form>
 </div>
 {% endblock %}
 
 {% block additional_scripts %}
-<script src="{{ url_for('static', filename='JavaScript/EditBook.js') }}"></script>
 {% endblock %}

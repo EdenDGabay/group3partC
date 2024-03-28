@@ -27,8 +27,8 @@ def EditBook_get(book_id):
         categories_collection = db['Categories']
         categories = categories_collection.find()
         if not book:
-            return render_template('EditBook.html', categories=categories, error_message="Invalid Book ID")
-        return render_template('EditBook.html', categories=categories, book=book)
+            return render_template('EditBook.html', categories=categories, error_message="Invalid Book ID", is_edit=True)
+        return render_template('EditBook.html', categories=categories, book=book, is_edit=True)
     return redirect(url_for('Login.login'))
 
 
@@ -92,9 +92,9 @@ def EditBook_Post(book_id):
                 books_collection.update_one({'_id': ObjectId(book_id)}, {'$set': book})
                 return redirect(url_for('Category.category', category_name=category, msg = "Book edited successfully!"))
             else:
-                return render_template('EditBook.html', categories=categories, book=book, error_message="Invalid Image URL")
+                return render_template('EditBook.html', categories=categories, book=book, error_message="Invalid Image URL", is_edit=True)
         else:
-            return render_template('EditBook.html', categories=categories, book=book, error_message="Invalid Category")
+            return render_template('EditBook.html', categories=categories, book=book, error_message="Invalid Category",  is_edit=True)
     else:
-        return render_template('EditBook.html', categories=categories, book=book, error_message="Please fill all fields")
+        return render_template('EditBook.html', categories=categories, book=book, error_message="Please fill all fields", is_edit=True)
         
